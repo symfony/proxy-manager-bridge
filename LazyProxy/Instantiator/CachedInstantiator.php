@@ -16,7 +16,7 @@ use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\LazyProxy\Instantiator\InstantiatorInterface;
 
 /**
- * Runtime lazy loading proxy generator (Using cached Proxy to improve performance).
+ * Lazy loading proxy generator (Using cached Proxy to improve performance).
  */
 class CachedInstantiator implements InstantiatorInterface
 {
