@@ -11,9 +11,9 @@
 
 namespace Symfony\Bridge\ProxyManager\LazyProxy\PhpDumper;
 
-use ProxyManager\Generator\ClassGenerator;
 use ProxyManager\GeneratorStrategy\BaseGeneratorStrategy;
 use ProxyManager\ProxyGenerator\LazyLoadingValueHolderGenerator;
+use Symfony\Bridge\ProxyManager\LazyProxy\Generator\ClassGenerator;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\LazyProxy\PhpDumper\DumperInterface;
