@@ -17,7 +17,7 @@ use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\LazyProxy\PhpDumper\DumperInterface;
 
 /**
- * Tests for {@see \Symfony\Bridge\ProxyManager\LazyProxy\PhpDumper\ProxyDumper}.
+ * Tests for {@see ProxyDumper}.
  *
  * @author Marco Pivetta <ocramius@gmail.com>
  *

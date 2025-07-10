@@ -19,7 +19,7 @@ use Symfony\Bridge\ProxyManager\LazyProxy\Instantiator\RuntimeInstantiator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**
- * Integration tests for {@see \Symfony\Component\DependencyInjection\ContainerBuilder} combined
+ * Integration tests for {@see ContainerBuilder} combined
  * with the ProxyManager bridge.
  *
  * @author Marco Pivetta <ocramius@gmail.com>
