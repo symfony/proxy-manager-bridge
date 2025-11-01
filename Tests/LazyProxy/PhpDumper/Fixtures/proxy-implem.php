@@ -210,12 +210,12 @@ class SunnyInterface_%s implements \ProxyManager\Proxy\VirtualProxyInterface, \S
         return $this->initializer%s;
     }
 
-    public function initializeProxy() : bool
+    public function initializeProxy(): bool
     {
         return $this->initializer%s && ($this->initializer%s->__invoke($valueHolder%s, $this, 'initializeProxy', array(), $this->initializer%s) || 1) && $this->valueHolder%s = $valueHolder%s;
     }
 
-    public function isProxyInitialized() : bool
+    public function isProxyInitialized(): bool
     {
         return null !== $this->valueHolder%s;
     }

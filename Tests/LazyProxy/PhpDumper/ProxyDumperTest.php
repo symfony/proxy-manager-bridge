@@ -142,6 +142,8 @@ EOPHP;
 
         $implem = preg_replace('#\n    /\*\*.*?\*/#s', '', $implem);
         $implem = str_replace("array(\n        \n    );", "[\n        \n    ];", $implem);
+        // https://github.com/symfony/symfony/pull/62269#issuecomment-3476843062
+        $implem = str_replace('() : bool', '(): bool', $implem);
 
         $this->assertStringMatchesFormatFile(__DIR__.'/Fixtures/proxy-implem.php', $implem);
         $this->assertStringEqualsFile(__DIR__.'/Fixtures/proxy-factory.php', $factory);
