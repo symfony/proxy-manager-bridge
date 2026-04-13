@@ -173,7 +173,7 @@ class ProxyDumperTest extends TestCase
         ];
 
         array_map(
-            function ($definition) {
+            static function ($definition) {
                 $definition[0]->setLazy(true);
             },
             $definitions
