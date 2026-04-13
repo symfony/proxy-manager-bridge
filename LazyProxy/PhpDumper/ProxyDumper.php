@@ -60,20 +60,20 @@ class ProxyDumper implements DumperInterface
         $proxyClass = $this->getProxyClassName($proxifiedClass->name);
 
         return <<<EOF
-        if (true === \$lazyLoad) {
-            $instantiation \$container->createProxy('$proxyClass', static fn () => \\$proxyClass::staticProxyConstructor(
-                static function (&\$wrappedInstance, \ProxyManager\Proxy\LazyLoadingInterface \$proxy) use (\$container) {
-                    \$wrappedInstance = $factoryCode;
+                    if (true === \$lazyLoad) {
+                        $instantiation \$container->createProxy('$proxyClass', static fn () => \\$proxyClass::staticProxyConstructor(
+                            static function (&\$wrappedInstance, \ProxyManager\Proxy\LazyLoadingInterface \$proxy) use (\$container) {
+                                \$wrappedInstance = $factoryCode;
 
-                    \$proxy->setProxyInitializer(null);
+                                \$proxy->setProxyInitializer(null);
 
-                    return true;
-                }
-            ));
-        }
+                                return true;
+                            }
+                        ));
+                    }
 
 
-EOF;
+            EOF;
     }
 
     public function getProxyCode(Definition $definition, ?string $id = null): string

@@ -116,29 +116,29 @@ class ProxyDumperTest extends TestCase
         $implem = "<?php\n\n".$this->dumper->getProxyCode($definition);
         $factory = $this->dumper->getProxyFactoryCode($definition, 'foo', '$container->getFooService(false)');
         $factory = <<<EOPHP
-<?php
+            <?php
 
-return new class
-{
-    public \$proxyClass;
-    private \$privates = [];
+            return new class
+            {
+                public \$proxyClass;
+                private \$privates = [];
 
-    public function getFooService(\$lazyLoad = true)
-    {
-        \$container = \$this;
+                public function getFooService(\$lazyLoad = true)
+                {
+                    \$container = \$this;
 
-{$factory}        return new {$class}();
-    }
+            {$factory}        return new {$class}();
+                }
 
-    protected function createProxy(\$class, \Closure \$factory)
-    {
-        \$this->proxyClass = \$class;
+                protected function createProxy(\$class, \Closure \$factory)
+                {
+                    \$this->proxyClass = \$class;
 
-        return \$factory();
-    }
-};
+                    return \$factory();
+                }
+            };
 
-EOPHP;
+            EOPHP;
 
         $implem = preg_replace('#\n    /\*\*.*?\*/#s', '', $implem);
         $implem = str_replace("array(\n        \n    );", "[\n        \n    ];", $implem);
